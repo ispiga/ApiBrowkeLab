@@ -1,0 +1,71 @@
+# Visual Studio / .NET Core common ignores
+## Build folders
+bin/
+obj/
+publish/
+
+## User-specific files
+.vs/
+.vscode/
+*.suo
+*.user
+*.userosscache
+*.DotSettings.user
+
+## Rider
+.idea/
+
+## NuGet
+packages/
+*.nupkg
+.nuget/
+
+## EF Core local DB files (ignore local DB files but keep migrations folder)
+*.db
+*.mdf
+*.ldf
+*.sqlite
+
+## ASP.NET / IIS
+logs/
+wwwroot/uploads/
+
+## Secrets / local configuration
+appsettings.Development.json
+appsettings.Local.json
+secrets.json
+.env
+.env.*
+
+## Certificates
+*.pfx
+*.p12
+*.key
+
+## Test results
+TestResults/
+coverage/
+*.trx
+
+## Publishing
+*.publishsettings
+
+## Packages and cache
+node_modules/
+bower_components/
+
+## OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+
+# Docker
+docker-compose.override.yml
+
+# Keep migrations tracked (do not ignore Migrations/)
+# If you want to ignore automatic EF migrations artifacts, adjust accordingly
