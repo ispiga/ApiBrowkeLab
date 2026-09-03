@@ -24,7 +24,7 @@ public class AuthController : ControllerBase
     /// Registra un nuevo usuario
     /// </summary>
     /// <param name="request">Datos del nuevo usuario (username, email, password)</param>
-    /// <returns>Respuesta con éxito o error del registro</returns>
+    /// <returns>Respuesta con éxito o error del registro y datos del usuario</returns>
     [HttpPost("register")]
     public async Task<ActionResult<AuthResponse>> Register([FromBody] RegisterRequest request)
     {
@@ -48,7 +48,7 @@ public class AuthController : ControllerBase
     /// Autentica un usuario (login)
     /// </summary>
     /// <param name="request">Credenciales del usuario (email, password)</param>
-    /// <returns>Respuesta con éxito y nombre de usuario o error</returns>
+    /// <returns>Respuesta con éxito o error del registro y datos del usuario</returns>
     [HttpPost("login")]
     public async Task<IActionResult> Login([FromBody] LoginRequest request)
     {
@@ -64,8 +64,7 @@ public class AuthController : ControllerBase
         {
             return Unauthorized(response);
         }
-
-        // Devolver únicamente el nombre de usuario correspondiente al email
-        return Ok(new { username = response.Username });
+ 
+        return Ok(response);
     }
 }
